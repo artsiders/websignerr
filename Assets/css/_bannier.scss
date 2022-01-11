@@ -1,0 +1,63 @@
+.bannier {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    .cover {
+        background-image: url(../images/baniere.jpg);
+        background-size: cover;
+        height: 100%;
+        width: 98%;
+        border-radius: 10px;
+        position: relative;
+    }
+    .box_etiquete {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+    }
+
+    .etiquete {
+        height: 150px;
+        width: 250px;
+        border-radius: 6px;
+        color: white;
+        padding: 12px;
+        text-transform: capitalize;
+        background: rgba(255, 255, 255, 0.295);
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 10.5px );
+        border: 1px solid rgba(255, 255, 255, 0.644);
+        img {
+            height: 100%;
+        }
+    }
+    .edit {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+        height: 40px;
+        width: 40px;
+        border: none;
+        background-color: var(--fontwhite);
+        color: var(--ecriture);
+        font-size: 18px;
+        border-radius: 25px;
+        cursor: pointer;
+        z-index: 19;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    
+}
+@media screen and (max-width: 900px) {
+    .bannier {
+        .box_etiquete {
+            display: none;
+        }
+    }
+}

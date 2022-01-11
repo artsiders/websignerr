@@ -1,0 +1,192 @@
+.content_post.hide, .content_post_edit.hide {
+    display: none;
+}
+.content_post, .content_post_edit {
+    @extend %content_popup;
+    position: fixed;
+    transition: .4s ease-in-out;
+    
+    .post {
+        @extend %popup;
+        animation: popupIn .6s ease-in-out;
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            overflow-y: scroll;
+            height: 100%;
+            width: 100%;
+            margin-right: 10px;
+        }
+    }
+    .principal_item img {
+        max-width: 98%;
+        width: auto;
+        max-height: 500px;
+        border-radius: 10px;
+        grid-row-start: 1;
+    }
+    .description {
+        max-height: 250px;
+        padding: 15px 5px;
+        background-color: wheat;
+        border-radius: 6px;
+        height: fit-content;
+        width: 98%;
+        grid-row-start: 2;
+    }
+    .items {
+        height: 100px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        width: 98%;
+        grid-row-start: 3;
+        height: fit-content;
+
+        .item {
+            width: 98%;
+            border-radius: 6px;
+        }
+        img {
+            width: inherit;
+            border-radius: 6px;
+        }
+    }
+    .post_comment{
+        display: flex;
+        width: 98%;
+        grid-row-start: 4;
+        margin: 30px 0;
+        position: relative;
+        .comment {
+            @extend %input;
+            background-color: var(--fontwhite);
+        }
+        button {
+            @extend %button;
+            font-size: 20px;
+            position: absolute;
+            right: 0px;
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: var(--ecriture);
+        }
+    }
+    #contentComments{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 98%;
+        span {
+            color: var(--ecriture);
+            padding: 20px;
+        }
+    }
+    .my_comments {
+        display: grid;
+        grid-template-columns: 50px auto;
+        position: relative;
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .comment {
+            min-height: 50px;
+            width: 100%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;
+        }
+        i {
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+            height: 35px;
+            width: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+    }
+    .my_comments.new_comment {
+        .comment {
+            animation: popupBounceIn .6s ease-in-out;
+        }
+    }
+    .auther_comments {
+        display: grid;
+        grid-template-columns: auto 40px;
+        img {
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .comment {
+            min-height: 50px;
+            width: calc(100% - 10px);
+            background-color: var(--primary);
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content_post, .content_post_edit {
+        .items{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+#formItem1, #formItem2, #formItem3, #formPric {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 1px;
+    input {
+        display: none;
+    }
+    label {
+        background-color: var(--primary);
+        color: white;
+        padding: 6px 10px;
+        border-radius: 2px;
+        border: 2px dashed #303030;
+        cursor: pointer;
+    }
+    button {
+        border: none;
+        background: var(--secondary);
+        color: white;
+        cursor: pointer;
+    }
+}
+#formPric {
+    grid-gap: 5px;
+    width: 98%;
+}
+#formDesc {
+    textarea {
+        @extend %input;
+        height: 150px;
+        border-radius: 4px;
+        resize: none;
+
+    }
+    button {
+        @extend %button;
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+    }
+}

@@ -1,0 +1,95 @@
+.content_addpost.hide, .content_editpost.hide {
+    display: none;
+}
+.content_addpost, .content_editpost {
+    @extend %content_popup;
+    position: fixed;
+    
+    form {
+        @extend %popup;
+        display: grid;
+        grid-template: auto auto auto / 1fr 1fr;
+        grid-gap: 15px;
+
+        button {
+            @extend %button;
+            grid-column-start: 2;
+        }
+    }
+    textarea {
+        @extend %input;
+        height: 100%;
+        padding-top: 10px;
+        border-radius: 6px;
+        resize: none;
+        background-color: var(--fontwhite);
+    }
+    .principal_item {
+        height: 245px;
+    }
+
+    .items{
+        grid-column: span 2;
+        height: fit-content;
+        padding: 6px;
+        display: grid;
+        grid-template: auto / repeat(3, 1fr);
+        grid-gap: 10px;
+        background: var(--white3);
+        border: 2px solid #8080801f;
+        label {
+            max-height: 130px;
+        }
+    }
+    label{
+        width: 100%;
+        min-height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 1px dashed #8080801f;
+        background-color: var(--fontwhite);
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        img{
+            height: 100%;
+            width: inherit;
+            position: absolute;
+        }
+        i{
+            font-size: 50px;
+            color: white;
+        }
+        input{
+            display: none;
+        }
+    }
+    span {
+        color: white;
+    }
+        
+}
+
+@media screen and (max-width: 400px) {
+    .content_addpost{
+        .principal_item {
+            grid-column: span 2;
+        }
+        textarea {
+            grid-column: span 2;
+            height: 200px;
+        }
+        form button {
+            grid-column-start: 1;
+            grid-column: span 2;
+        }
+        #addPost {
+            overflow-y: scroll;
+        }
+        form .items {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

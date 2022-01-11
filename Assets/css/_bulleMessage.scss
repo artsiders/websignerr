@@ -1,0 +1,17 @@
+.bulle_message {
+    .bulle {
+        @extend %button;
+        position: fixed;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        z-index: 22;
+        font-size: 26px;
+        display: flex;
+        right: 16px;
+        bottom: 20px;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.795);
+    }
+}

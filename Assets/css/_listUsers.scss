@@ -1,0 +1,31 @@
+.list_users {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    h2 {
+        text-align: center;
+        color: var(--ecriture);
+        margin-bottom: 0;
+    }
+    .user {
+        // box-shadow: 0 0 15px rgba(0, 0, 0, 0.089);
+        padding: 5px 10px 0 10px;
+        border: 1px solid #80808066;
+        border-radius: 8px;
+
+        .profil {
+            margin-bottom: 0;
+            gap: 10px;
+        }
+        .profil span {
+            color: var(--ecriture) !important;
+        }
+    }
+    button {
+        @extend %button;
+        position: relative;
+    }
+    sup {
+        @extend %sup;
+    }
+}

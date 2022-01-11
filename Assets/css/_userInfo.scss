@@ -1,0 +1,140 @@
+.aside {
+    .user_info {
+        height: fit-content;
+        padding: 10px;
+        border-radius: 10px;
+        position: relative;
+        margin-bottom: 20px;
+        color: var(--ecriture);
+        .user_profil > div {
+            position: absolute;
+            top: -100px;
+            right: 0px;
+            height: 170px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .user_profil > div > div {
+            position: relative;
+            height: fit-content;
+            width: fit-content;
+        }
+        .user_profil img {
+            height: 170px;
+            width: 170px;
+            border-radius: 50%;
+        }
+        .user_profil button {
+            height: 35px;
+            width: 35px;
+            border-radius: 50%;
+            border: none;
+            font-size: 20px;
+            background-color: var(--font);
+            color: var(--ecriture);
+            position: absolute;
+            right: 10px;
+            bottom: 0;
+            cursor: pointer;
+        }
+    }
+    .user_info form {
+        margin-top: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: var(--ecriture);
+        
+        gap: 10px;
+        
+        input {
+            @extend %input;
+            border-radius: 0;
+            border-bottom: 2px solid gray;
+            background-color: var(--font);
+            color: var(--ecriture);
+        }
+        textarea {
+            @extend %input;
+            border-radius: 0;
+            border-bottom: 2px solid gray;
+            background-color: var(--font);
+            resize: none;
+            height: 100px;
+            padding-top: 5px;
+            color: var(--ecriture);
+        }
+        button {
+            @extend %button;
+        }
+    }
+
+    #formProfilUpdate {
+        display: none;
+        legend {
+            text-align: center;
+        }
+        input {
+            border-bottom: 2px solid var(--primary);
+        }
+        textarea {
+            border-bottom: 2px solid var(--primary);
+        }
+    }
+    
+    
+}
+#formUpdatePicture{
+    @extend %content_popup;
+    position: fixed;
+    div {
+        @extend %popup;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+    label {
+        height: 150px;
+        width: 150px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        i {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: inherit;
+            width: inherit;
+            font-size: 30px;
+        }
+    }
+    img{
+        height: inherit;
+        width: inherit;
+        border-radius: 50%;
+    }
+    button {
+        @extend %button;
+        padding: 0 20px;
+    }
+}
+#formUpdateCover{
+    @extend #formUpdatePicture;
+    label {
+        width: 90%;
+    }
+    img{
+        border-radius: 0;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    
+}

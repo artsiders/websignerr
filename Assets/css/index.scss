@@ -1,0 +1,88 @@
+@import "_settings.scss";
+@import "_scrollBar.scss";
+@import "_topbar.scss";
+@import "_bannier.scss";
+@import "_aside.scss";
+@import "_cards.scss";
+@import "_footer.scss";
+@import "_loader.scss";
+@import "_post.scss";
+@import "_addPost.scss";
+@import "_userInfo.scss";
+@import "_userPost.scss";
+@import "_animation.scss";
+@import "_dashboard.scss";
+@import "_listUsers.scss";
+@import "_bulleMessage.scss";
+@import "_about.scss";
+
+// PAGE 404
+.not_found {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 50%;
+    }
+}
+
+// STRUCTURE DE LA PAGE D'ACCUEIL
+#root {
+    display: grid;
+    grid-template: 60px 300px auto auto/ auto;
+    grid-gap: 10px;
+
+    section {
+        display: grid;
+        grid-template-columns: 30% auto 25%;
+        grid-column-gap: 20px;
+        min-height: 500px;
+    }
+    header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    aside {
+        display: flex;
+        justify-content: center;
+    }
+    .section_profil {
+        grid-template-columns: 30% auto;
+        article .content_post_user {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+}
+
+@media screen and (max-width: 900px) {
+    #root {
+        section {
+            grid-template-columns: 40% auto;
+        }
+    }
+}
+@media screen and (max-width: 700px) {
+    #root {
+        section {
+            display: flex;
+            flex-direction: column;
+        }
+        aside {
+            margin: 0px 0 10px 0;
+            height: fit-content;
+        }
+    }
+}
+
+// @media (prefers-color-scheme: dark) {
+//     body {
+//         background-color: black;
+//     }
+// }

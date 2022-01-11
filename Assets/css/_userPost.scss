@@ -1,0 +1,40 @@
+.content_post_user {
+    @extend .content_card;
+    .card {
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        position: relative;
+    }
+    .box_image {   
+        img {
+            min-height: 10px;
+            width: 300px;
+        }
+    }
+    .action {
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+
+        button {
+            height: 30px;
+            width: 30px;
+            background-color: var(--fontwhite);
+            border: none;
+            border-radius: 2px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .edit {
+            color: $success;
+        }
+        .delete {
+            color: $danger;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
+}

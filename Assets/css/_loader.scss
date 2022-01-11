@@ -1,0 +1,33 @@
+.content_loader {
+    background-color: var(--fontwhite);
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .logo img {
+        height: 110px;
+        animation: loadLogo .8s ease-in-out alternate infinite;
+    }
+}
+
+.load_hide{
+    animation: loadHide .4s linear forwards;
+}
+@keyframes loadHide {
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes loadLogo {
+    100%{
+        opacity: .5;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    
+}

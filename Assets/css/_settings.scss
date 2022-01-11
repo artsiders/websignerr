@@ -1,0 +1,158 @@
+$background-blue-sky: #edf2f9;
+$primary:    #28A2E7 !default;
+$success:    #198754 !default;
+$secondary:  #676767 !default;
+$danger:     #dc3545 !default;
+$warning:    #fd7e14 !default;
+$auther:     #151845 !default;
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+:root {
+  --font:       #edf2f9;
+  --ecriture:   #ffffff;
+  --fontwhite:  #ffffff;
+  --primary:    #28A2E7;
+  --success:    #198754;
+  --secondary:  #676767;
+  --danger:     #dc3545;
+  --warning:    #fd7e14;
+  --auther:     #151845;
+}
+
+
+* {
+  box-sizing: border-box;
+  // font-family: cascadia Mono, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  // font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+body {
+  padding: 0;
+  margin: 0;
+  background: rgb(203,225,255);
+  background: var(--font);
+}
+// pour tout les inputs de type text numbre search ....
+%input {
+  height: 36px;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding-left: 14px;
+  background-color: var(--font);
+  color: var(--ecriture);
+
+  &:focus {
+    box-shadow: inset 0 0 5px rgba(41, 41, 41, 0.568);
+  }
+}
+// pour tout les popup
+%content_popup {
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.411);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+%popup {
+  animation: popupBounceIn .5s ease-in-out;
+  height: 500px;
+  width: 600px;
+  padding: 15px;
+  border-radius: 10px;
+  position: relative;
+  // background-color: var(--font);
+
+  background: var(--font);
+  // box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.37);
+  // backdrop-filter: blur( 20.5px );
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  .close {
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      right: -15px;
+      top: -15px;
+      height: 40px;
+      width: 40px;
+      background-color: $danger;
+      color: white;
+      border-radius: 50%;
+      font-family: cursive;
+      font-weight: bold;
+      font-size: 14px;
+      cursor: pointer;
+      z-index: 40;
+  }
+}
+
+%button {
+  height: 40px;
+  border: none;
+  outline: none;
+  background-color: $primary;
+  color: white;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  &:hover {
+      transform: scale(1.02);
+  }
+  &:active {
+      transform: scale(.96);
+  }
+}
+
+%sup {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: var(--warning);
+  color: white;
+  padding: 1px 5px;
+  border-radius: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  %popup {
+    width: 100%;
+    height: 100%;
+    // padding-top: 50px;
+    border-radius: 0px;
+    
+    .close {
+      right: 4px;
+      top: 4px;
+    }
+  }
+}
